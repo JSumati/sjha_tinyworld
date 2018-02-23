@@ -1,0 +1,46 @@
+ID: sjha_tinyworld
+version: 0.0.1
+_schema-version: '2.0'
+modules:
+  - name: sjha_tinydb
+    type: hdb
+    path: sjha_tinydb
+    requires:
+      - name: hdi-container
+  - name: sjha_tinyjs
+    type: nodejs
+    path: sjha_tinyjs
+    provides:
+      - name: sjha_tinyjs_api
+        properties:
+          service_url: '${default-url}'
+    requires:
+      - name: hdi-container
+      - name: sjha_tinydb
+  - name: tinyui
+    type: html5
+    path: tinyui
+    requires:
+      - name: sjha_tinyjs_api
+        group: destinations
+        properties:
+          name: sjha_tinyjs_be
+          url: '~{service_url}'
+      - name: ui5-lib
+        properties:
+          ui5liburl: ~{url}
+    provides:
+      - name: tinyui
+        properties:
+          ui-url: '${default-url}'
+resources:
+  - name: hdi-container
+    type: com.sap.xs.hdi-container
+    properties:
+      hdi-container-name: '${service-name}'
+  - name: ui5-lib
+    type: configuration
+    parameters:
+      ID: 'com.sap.ui5.dist.sapui5-dist-xsa.XSAC_SAPUI5_FESV3:sapui5_fesv3'
+      name: sapui5_fesv3
+      version: "=1.44.18"

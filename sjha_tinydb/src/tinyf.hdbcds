@@ -1,0 +1,15 @@
+namespace sjha_tinyworld.sjha_tinydb;
+ //using Core;
+ //@oData.publish : true
+context tinyf {
+    /*@@layout{"layoutInfo":{"x":-339,"y":-167}}*/
+    entity world {
+        key continent : String(100);
+    };
+
+    /*@@layout{"layoutInfo":{"x":-41,"y":-3}}*/
+entity country {
+        key name   : String(100);
+            partof : association[0..1] to world;
+    };
+};
