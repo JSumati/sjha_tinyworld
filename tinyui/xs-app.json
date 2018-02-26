@@ -5,14 +5,15 @@
 		"source": "^/euro.xsodata/.*$",
 		"destination": "sjha_tinyjs_be"
 		
-	},
-	{
-		"source": "(.*)",
-		"localDir": "resources",
-	
-		"replace":{
-			"pathSuffixes": ["index.html"],
-			"vars": ["ui5liburl"]
+	},{
+			"source": "/(.*)",
+			"localDir": "resources",
+			"replace": {
+				"pathSuffixes": ["index.html"],"vars": ["ui5liburl"]
+				}
+	},{
+		"source": ".*\\.xsjs",
+		"destination": "sjha_tinyjs_be"
 		}
-	}]
+	]
 }

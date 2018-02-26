@@ -1,5 +1,5 @@
 ID: sjha_tinyworld
-version: 0.0.1
+version: 0.1.1
 _schema-version: '2.0'
 modules:
   - name: sjha_tinydb
