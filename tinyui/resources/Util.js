@@ -2,8 +2,7 @@ var oFirstDialog;
 function openFirstDialog(){
 	if (oFirstDialog){
 		oFirstDialog.open();
-	}
-	else{
+	}else{
 		oFirstDialog = new sap.ui.commons.Dialog({
 			width: "400px", //sap.ui.CSSize
 			height: "550px", //sap.ui.CSSize
@@ -14,7 +13,7 @@ function openFirstDialog(){
 				content:[
 					new sap.ui.core.Title({text: "Country Name"}),
 					new sap.ui.commons.Label({text:"name"}),
-					new sap.ui.commons.TextField({value: "", id: "name"}),
+					new sap.ui.commons.TextField({value: " ", id: "name"}),
 					new sap.ui.commons.Label({text:"partof"}),
 					new sap.ui.commons.TextField({value: "", id: "partof"})
 					]
@@ -25,7 +24,7 @@ function openFirstDialog(){
 			press: function(){
 				var name = sap.ui.getCore().byId("name").getValue();
 				var partof = sap.ui.getCore().byId("partof").getValue();
-				var payload ={};
+				var payload = {};
 				payload.name = name;
 				payload.partof = partof;
 				var insertdata = JSON.stringify(payload);
@@ -35,7 +34,7 @@ function openFirstDialog(){
 					contentType: "application/json",
 					data: insertdata,
 					dataType: "json",
-					crossdomain: true,
+					crossDomain: true,
 					success: function(data){
 						oFirstDialog.close();
 						sap.ui.getCore().byId("tinytab").getModel().refresh(true);

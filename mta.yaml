@@ -33,6 +33,12 @@ modules:
       - name: tinyui
         properties:
           ui-url: '${default-url}'
+
+  
+
+
+  
+
 resources:
   - name: hdi-container
     type: com.sap.xs.hdi-container

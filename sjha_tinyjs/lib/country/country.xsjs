@@ -12,11 +12,12 @@ function savecountry(country){
 		return {body: output, status: $.net.http.CREATED};
 	}
 }
-	var body= $.request.body.asString();
-	var country = JSON.parse(body);
+	 var body = $.request.body.asString();
+	 var country = JSON.parse(body);
 
 	//validate the input here
 	var output = savecountry(country);
 	$.response.contentType = "application/json";
 	$.response.setBody(output.body);
 	$.response.status = output.status;
+ 
