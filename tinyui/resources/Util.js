@@ -2,7 +2,8 @@ var oFirstDialog;
 function openFirstDialog(){
 	if (oFirstDialog){
 		oFirstDialog.open();
-	}else{
+	}
+	else{
 		oFirstDialog = new sap.ui.commons.Dialog({
 			width: "400px", //sap.ui.CSSize
 			height: "550px", //sap.ui.CSSize
